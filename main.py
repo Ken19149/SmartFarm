@@ -12,6 +12,9 @@ D2 = Pin(4,Pin.OUT)          #LED
 D3 = Pin(0,Pin.OUT)          #FAN
 D4 = PWM(Pin(2,Pin.OUT))     #PUMP
 
+pump_power = 50
+pump_power = int(float((pump_power)/100)*1023)
+
 D4.freq(900)
 standard_humidity = 75
 
@@ -59,9 +62,11 @@ while True:
     second = current_time[6]
     
     if hour == 12 and minute == 0 and (0 <= second <= 30):
-        D4.duty(50)
+        D4.duty(pump_power)
     else:
         D4.duty(0)
+    
+    #-----------Record Sensor data----------------#
     
     time.sleep(1)
     
