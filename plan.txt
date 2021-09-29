@@ -1,0 +1,14 @@
+record:
+csv files: 2 bytes/row
+6 bytes/record
+80kb = 80,000 bytes
+80,000 bytes / 6 bytes/record = 13,333 records
+5 min/record * 1 week = 8064 records = 48,384 + 4 = 48,388 bytes
+
+ideas
+-record temperature + humidity for graph
+
+must do:
+LED: always open light
+Sensor and fan: open fan when humidity > 75
+Pump: pump at 12.00 for x sec freq-900 duty-50%
