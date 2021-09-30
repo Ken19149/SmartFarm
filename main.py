@@ -61,7 +61,7 @@ while True:
     minute = current_time[5]
     second = current_time[6]
     
-    if hour == 12 and minute == 0 and (0 <= second <= 30):
+    if hour == 12 and minute == 0 and (0 <= second <= 5):
         D4.duty(pump_power)
     else:
         D4.duty(0)
