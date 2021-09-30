@@ -5,6 +5,10 @@ csv files: 2 bytes/row
 80,000 bytes / 6 bytes/record = 13,333 records
 5 min/record * 1 week = 8064 records = 48,384 + 4 = 48,388 bytes
 
+record #2:
+send data from ESP8266 to database
+host website to show data
+
 ideas
 -record temperature + humidity for graph
 
