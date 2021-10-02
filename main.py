@@ -12,11 +12,11 @@ D2 = Pin(4,Pin.OUT)          #LED
 D3 = Pin(0,Pin.OUT)          #FAN
 D4 = PWM(Pin(2,Pin.OUT))     #PUMP
 
-pump_power = 50
+pump_power = 30
 pump_power = int(float((pump_power)/100)*1023)
 
 D4.freq(900)
-standard_humidity = 75
+standard_humidity = 70
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -57,16 +57,19 @@ while True:
         D3.off()
     
     current_time = rtc.datetime()
+    day = current_time[3] #day in a week | 0 = monday
     hour = current_time[4]
     minute = current_time[5]
     second = current_time[6]
     
-    if hour == 12 and minute == 0 and (0 <= second <= 5):
+    if (day % 2 = 0) and hour == 12 and minute == 0 and (0 <= second <= 3):
         D4.duty(pump_power)
     else:
         D4.duty(0)
     
     #-----------Record Sensor data----------------#
+    
+    
     
     time.sleep(1)
     
